@@ -67,7 +67,8 @@ def locateGoodPhotons(dat):
                       if (abs(photon_eta) < 1.37 or abs(photon_eta) > 1.52):
 
                         goodphoton_index.append(j) # Store photon's index
-        return goodphoton_index
+                    
+        return goodphoton_index # Return list of good photon indices
 
 def photonIsolation(dat,photon_indices):
     """
@@ -149,7 +150,6 @@ def sumFourMomentum(four_momenta):
     
     # Initialise (set up) TLorentzVector for our momentum sum
     four_mom_sum = TLorentzVector()
-
     for obj in four_momenta:
         four_mom_sum += obj
         
@@ -193,7 +193,7 @@ print(f"starting proccessing {len(events)} events ...")
 threads = multiprocessing.cpu_count()
 
 proccessed_data = crochet(anlise_data,events,threads,loading)
-proccessed_data.load_fraction = 1000
+proccessed_data.load_fraction = 5000
 proccessed_data = proccessed_data.run()
 
 print("done proccessing! \n cleaning data...\r",end="")

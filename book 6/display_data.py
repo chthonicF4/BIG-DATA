@@ -3,7 +3,7 @@ from hist import Hist
 file = open(r"book 6\combined_data_out.json","rb")
 data = pickle.load(file)
 random.shuffle(data)
-histagram = Hist(hist.axis.Regular(30, 105, 160))
+histagram = Hist(hist.axis.Regular(40, 105, 160))
 print("ploting...")
 histagram.fill(data)
 
