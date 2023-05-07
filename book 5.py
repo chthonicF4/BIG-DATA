@@ -87,10 +87,9 @@ def analise_event(event):
     lep_phi    = event[ "lep_phi"  ]
     lep_E      = event[   "lep_E"  ]
 
+    out_bosons = []
 
     combos = []
-
-    out_bosons = []
 
     for x in range(lep_n):
         for y in range(lep_n):
